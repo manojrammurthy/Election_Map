@@ -11,8 +11,9 @@ mysql_select_db('election');
 <body>
 <!--<form method="POST" action="">-->
 <?php
-$val=$_POST['aconstituency']; 
-$query = mysql_query("SELECT * FROM emap where aconstituency ='$val'"); // Run the query
+$val1 = $_POST['district'];
+//$val=$_POST['aconstituency']; 
+$query = mysql_query("SELECT * FROM emap where district ='$val1'"); // Run the query
 
 //echo '<label>View By:</label><select name="polling_station"><option value="">polling_station</option>';
  // Opens the drop down box
@@ -31,10 +32,10 @@ while ($row = mysql_fetch_array($query)) {
 echo '</select>';
 echo "<tr>";
   echo "<td>" . $row['district'] . "</td>" ; 
-  echo "<td>" . $row['polling_station'] . "</td>";
+  echo "<td>" . $row['name'] . "</td>";
   //echo "<td>" . $row['lat'] . "</td>";
   //echo "<td>" . $row['lng'] . "</td>"; 
-  echo "<td><a href=\"index.php?lat=$row[lat]&lng=$row[lng]\" ><input type=\"submit\" value=\"ENTER\" /></a></td>";
+  echo "<td><a href=\"index.php?lat=$row[lat]&lon=$row[lon]\" ><input type=\"submit\" value=\"ENTER\" /></a></td>";
   echo "</tr>";
 }
 //echo '</select>';// Closes drop down box

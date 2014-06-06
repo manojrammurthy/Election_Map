@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<h1> polling station bangalore</h1>
+  	<h1> polling station bangalore rural assembly constituency</h1>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
@@ -15,14 +15,16 @@
     </script>
     <?php
     $lat =$_GET['lat'];
-    $lng =$_GET['lng'];
+    $lng =$_GET['lon'];
     ?>
     <script type="text/javascript">
       var map;
 function initialize() {
   var mapOptions = {
     zoom: 13,
+    mapTypeId: google.maps.MapTypeId.HYBRID,
     center: new google.maps.LatLng(<?Php echo $lat ?>,<?Php echo $lng  ?>)
+
   };
 
   var map = new google.maps.Map(document.getElementById('map-canvas'),
