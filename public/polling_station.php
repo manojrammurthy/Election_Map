@@ -7,8 +7,22 @@ mysql_select_db('election');
 <head>
 	<meta charset="UTF-8">
 	<title>states</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
+	<div id = "Content">
+		<h2> select Your polling booth location</h2>
+	</div>
+	<font color ="green">
+	<script>
+function goBack() {
+    window.history.back()
+}
+</script>
+</font>
+<body>
+<button onclick="goBack()">Go Back</button>
+</body>
 <!--<form method="POST" action="">-->
 <?php
 $val1 = $_POST['district'];
@@ -35,7 +49,7 @@ echo "<tr>";
   echo "<td>" . $row['name'] . "</td>";
   //echo "<td>" . $row['lat'] . "</td>";
   //echo "<td>" . $row['lng'] . "</td>"; 
-  echo "<td><a href=\"index.php?lat=$row[lat]&lon=$row[lon]\" ><input type=\"submit\" value=\"ENTER\" /></a></td>";
+  echo "<td><a href=\"gmap.php?lat=$row[lat]&lon=$row[lon]\" ><input type=\"submit\" value=\"ENTER\" /></a></td>";
   echo "</tr>";
 }
 //echo '</select>';// Closes drop down box
